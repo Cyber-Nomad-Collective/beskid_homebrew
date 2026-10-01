@@ -1,22 +1,22 @@
 # Beskid Homebrew formula template.
 #
-# Rendered by the macos-brew CI job with:
-#   0.4.746  -> immutable release semver
-#   39f976001b076e625fb1060ed9a2dbd261b85327feeedd844e8ab84094254b46   -> sha256 of the complete darwin-arm64 target bundle
+# Rendered by the superrepo's Woodpecker release pipeline with:
+#   0.5.0  -> immutable release semver
+#   126641437ed6c0639ffbf4178d13cfb73421feeab469e909131e6f7668194dce   -> sha256 of the complete darwin-arm64 target bundle
 #
-# The rendered file is committed to Cyber-Nomad-Collective/beskid_homebrew
-# by Justintime50/homebrew-releaser. We render it ourselves (rather than letting
-# the action do it) because the release assets live on beskid_compiler, not the
-# superrepo the workflow runs in.
+# The rendered file is committed to Cyber-Nomad-Collective/beskid_homebrew by
+# scripts/ci/publish-homebrew-formula.sh in the superrepo. It is rendered here
+# because the release assets live on beskid_compiler, not the superrepo the
+# pipeline runs in.
 class Beskid < Formula
   desc "Beskid compiler CLI (AOT, host composition)"
   homepage "https://beskid-lang.org"
   license "Apache-2.0"
-  url "https://github.com/Cyber-Nomad-Collective/beskid_compiler/releases/download/v0.4.746/beskid-0.4.746-aarch64-apple-darwin.tar.gz"
-  version "0.4.746"
-  sha256 "39f976001b076e625fb1060ed9a2dbd261b85327feeedd844e8ab84094254b46"
+  url "https://github.com/Cyber-Nomad-Collective/beskid_compiler/releases/download/v0.5.0/beskid-0.5.0-aarch64-apple-darwin.tar.gz"
+  version "0.5.0"
+  sha256 "126641437ed6c0639ffbf4178d13cfb73421feeab469e909131e6f7668194dce"
 
-  # Apple Silicon only in v1 (compiler.yml builds aarch64-apple-darwin only).
+  # Apple Silicon only: the compiler pipeline builds aarch64-apple-darwin only.
   on_macos do
     on_arm do
       # nothing extra; binary is prebuilt for arm64
@@ -29,7 +29,7 @@ class Beskid < Formula
   end
 
   def install
-    libexec.install "bin", "lib", "beskid_corelib", "packages", "release-version.txt"
+    libexec.install "bin", "lib", "beskid_corelib", "release-version.txt"
     bin.write_exec_script libexec/"bin/beskid"
     bin.write_exec_script libexec/"bin/beskid_lsp"
     bin.write_exec_script libexec/"bin/beskid-up"
