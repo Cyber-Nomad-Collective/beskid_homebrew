@@ -1,8 +1,8 @@
 # Beskid Homebrew formula template.
 #
 # Rendered by the superrepo's Woodpecker release pipeline with:
-#   0.5.2  -> immutable release semver
-#   8982185362c8f8ad6799edbf5304af77c4545b3e2784e0945ead43877671f387   -> sha256 of the complete darwin-arm64 target bundle
+#   0.5.3  -> immutable release semver
+#   d146d573d5e972b7895e5444686f47f2fca98d198cb3b28f37732cbf2d765446   -> sha256 of the complete darwin-arm64 target bundle
 #
 # The rendered file is committed to Cyber-Nomad-Collective/beskid_homebrew by
 # scripts/ci/publish-homebrew-formula.sh in the superrepo. It is rendered here
@@ -12,9 +12,9 @@ class Beskid < Formula
   desc "Beskid compiler CLI (AOT, host composition)"
   homepage "https://beskid-lang.org"
   license "Apache-2.0"
-  url "https://github.com/Cyber-Nomad-Collective/beskid_compiler/releases/download/v0.5.2/beskid-0.5.2-aarch64-apple-darwin.tar.gz"
-  version "0.5.2"
-  sha256 "8982185362c8f8ad6799edbf5304af77c4545b3e2784e0945ead43877671f387"
+  url "https://github.com/Cyber-Nomad-Collective/beskid_compiler/releases/download/v0.5.3/beskid-0.5.3-aarch64-apple-darwin.tar.gz"
+  version "0.5.3"
+  sha256 "d146d573d5e972b7895e5444686f47f2fca98d198cb3b28f37732cbf2d765446"
 
   # Apple Silicon only: the compiler pipeline builds aarch64-apple-darwin only.
   on_macos do
